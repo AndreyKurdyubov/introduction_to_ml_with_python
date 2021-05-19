@@ -30,7 +30,8 @@ def tree_image(tree, fout=None):
     data = re.sub(r"\\nsamples = [0-9]+", "", data)
     data = re.sub(r"value", "counts", data)
 
-    graph = graphviz.Source(data, format="png")
+#     graph = graphviz.Source(data, format="png")
+    graph = graphviz.Source(data) # Andrey: use pdf as output
     if fout is None:
         fout = "tmp"
     graph.render(fout)
